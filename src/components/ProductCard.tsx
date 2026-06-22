@@ -94,14 +94,14 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
           {product.features[0]}
         </p>
 
-        {/* Price + button on same row */}
-        <div className="mt-auto flex items-center justify-between gap-2">
+        {/* Price + button — stacked on mobile, side-by-side on sm+ */}
+        <div className="mt-auto flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-1.5 min-w-0">
             <span className="text-xs sm:text-sm font-semibold text-[#1A1A1A] whitespace-nowrap">
               BDT {product.price.toLocaleString()}
             </span>
             {product.originalPrice > product.price && (
-              <span className="text-[0.6rem] text-[#7A6B5D] line-through whitespace-nowrap hidden sm:inline">
+              <span className="text-[0.65rem] text-[#7A6B5D] line-through whitespace-nowrap">
                 BDT {product.originalPrice.toLocaleString()}
               </span>
             )}
@@ -109,7 +109,7 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
 
           <button
             onClick={handleAddToCart}
-            className="flex-shrink-0 px-2.5 py-1.5 bg-[#8B7355] text-white text-[0.55rem] font-medium tracking-widest uppercase hover:bg-[#7A6347] transition-colors whitespace-nowrap"
+            className="w-full sm:w-auto flex-shrink-0 px-3 py-2 sm:px-2.5 sm:py-1.5 bg-[#8B7355] text-white text-[0.65rem] sm:text-[0.6rem] font-medium tracking-widest uppercase hover:bg-[#7A6347] transition-colors whitespace-nowrap min-h-[36px] sm:min-h-0"
           >
             Add to Cart →
           </button>
