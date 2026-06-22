@@ -75,38 +75,43 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
       </Link>
 
       <div className="pt-1">
-        <div className="flex items-start justify-between gap-2 mb-1.5">
+        {/* Name + Stars — wrap on very narrow cards */}
+        <div className="flex items-start justify-between gap-1 mb-1">
           <Link
             to={`/product/${product.id}`}
-            className="font-semibold text-sm text-[#1A1A1A] leading-snug hover:text-[#8B9D83] transition-colors truncate"
+            className="font-semibold text-xs sm:text-sm text-[#1A1A1A] leading-snug hover:text-[#8B9D83] transition-colors line-clamp-2"
           >
             {product.name}
           </Link>
-          <StarRating rating={product.rating} />
+          <div className="flex-shrink-0 pt-0.5">
+            <StarRating rating={product.rating} />
+          </div>
         </div>
 
-        <p className="text-xs text-[#5C4F43] leading-relaxed mb-3 line-clamp-1">
+        {/* Description — hidden on very small screens to save space */}
+        <p className="hidden sm:block text-xs text-[#5C4F43] leading-relaxed mb-2 line-clamp-1">
           {product.description}
         </p>
 
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <span className="text-sm font-semibold text-[#1A1A1A]">
-              BDT {product.price.toLocaleString()}
+        {/* Price row */}
+        <div className="flex items-center gap-1.5 mb-2 mt-1">
+          <span className="text-xs sm:text-sm font-semibold text-[#1A1A1A]">
+            BDT {product.price.toLocaleString()}
+          </span>
+          {product.originalPrice > product.price && (
+            <span className="text-[0.65rem] sm:text-xs text-[#7A6B5D] line-through">
+              BDT {product.originalPrice.toLocaleString()}
             </span>
-            {product.originalPrice > product.price && (
-              <span className="text-xs text-[#7A6B5D] line-through">
-                BDT {product.originalPrice.toLocaleString()}
-              </span>
-            )}
-          </div>
-          <button
-            onClick={handleAddToCart}
-            className="flex-shrink-0 px-3 py-1.5 bg-[#8B7355] text-white text-[0.6rem] font-medium tracking-widest uppercase hover:bg-[#7A6347] transition-colors whitespace-nowrap"
-          >
-            Add to Cart →
-          </button>
+          )}
         </div>
+
+        {/* Add to Cart — full width */}
+        <button
+          onClick={handleAddToCart}
+          className="w-full py-1.5 bg-[#8B7355] text-white text-[0.6rem] font-medium tracking-widest uppercase hover:bg-[#7A6347] transition-colors"
+        >
+          Add to Cart →
+        </button>
       </div>
     </div>
   );

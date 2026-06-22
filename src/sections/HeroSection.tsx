@@ -8,14 +8,16 @@ export default function HeroSection() {
       {/* Main Hero Area — no gap after banner */}
       <div className="relative w-full" style={{ backgroundColor: '#E0DFDD' }}>
         <div className="mx-auto w-full flex flex-col lg:flex-row" style={{ maxWidth: '1200px' }}>
-          {/* Left: Fashion Image — aligned to bottom right of left column (close to centerline) */}
+          {/* Left: Fashion Image */}
           <div className="relative w-full lg:w-[55%] flex items-end justify-center lg:justify-end overflow-hidden lg:overflow-visible">
-            <div className="relative w-full flex items-end justify-center lg:justify-end" style={{ height: 'min(85vh, 760px)' }}>
+            <div
+              className="relative w-full flex items-end justify-center lg:justify-end"
+              style={{ height: 'clamp(240px, 45vw, 760px)' }}
+            >
               <img
                 src="/images/hero-model.png"
                 alt="Fashion model in winter fur coat and stylish dress"
-                className="w-auto h-full object-contain object-bottom transition-transform duration-500"
-                style={{ maxWidth: '120%', transform: 'translateX(30px)' }}
+                className="w-auto h-full object-contain object-bottom transition-transform duration-500 lg:[transform:translateX(30px)] lg:[max-width:120%]"
               />
             </div>
             {/* Bottom Fade */}
@@ -24,9 +26,9 @@ export default function HeroSection() {
               style={{ background: 'linear-gradient(to top, #E0DFDD, transparent)' }}
             />
           </div>
- 
-          {/* Right: Offer Text — aligned to left of right column (close to centerline) */}
-          <div className="w-full lg:w-[45%] flex flex-col justify-center items-start px-8 lg:px-12 py-12 lg:py-0 relative z-10">
+
+          {/* Right: Offer Text */}
+          <div className="w-full lg:w-[45%] flex flex-col justify-center items-start px-6 sm:px-8 lg:px-12 py-8 lg:py-0 relative z-10">
             <h1
               className="font-heading leading-tight mb-3"
               style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', color: '#2D2D2D' }}
@@ -63,7 +65,7 @@ export default function HeroSection() {
       </div>
  
       {/* Category Cards */}
-      <div className="w-full relative z-10" style={{ backgroundColor: '#E0DFDD', marginTop: '-60px' }}>
+      <div className="w-full relative z-10" style={{ backgroundColor: '#E0DFDD', marginTop: '-20px' }}>
         <div className="content-max-width px-5 lg:px-8 pt-0 pb-12 lg:pb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
             {/* FOR MEN */}
