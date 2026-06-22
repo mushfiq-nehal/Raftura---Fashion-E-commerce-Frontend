@@ -88,16 +88,14 @@ export default function Footer() {
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="font-body text-xs text-[#A09890]">
-              &copy; 2025 RAFTURA. All rights reserved.
+              &copy; 2026 RAFTURA. All rights reserved.
             </p>
-            <div className="flex items-center gap-4">
-              {/* Payment Icons */}
-              <div className="flex items-center gap-2">
-                <span className="font-label text-[0.5rem] text-[#A09890] px-2 py-1 border border-gray-300 rounded">VISA</span>
-                <span className="font-label text-[0.5rem] text-[#A09890] px-2 py-1 border border-gray-300 rounded">MC</span>
-                <span className="font-label text-[0.5rem] text-[#A09890] px-2 py-1 border border-gray-300 rounded">AMEX</span>
-                <span className="font-label text-[0.5rem] text-[#A09890] px-2 py-1 border border-gray-300 rounded">PP</span>
-              </div>
+            <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-end">
+              <img src="/images/Logo/bkash-logo-png_seeklogo-471379.png" alt="bKash" className="h-6 w-auto object-contain" />
+              <img src="/images/Logo/Nagad-Logo.wine.svg" alt="Nagad" className="h-6 w-auto object-contain" />
+              <img src="/images/Logo/Visa_Inc.-Logo.wine.svg" alt="Visa" className="h-6 w-auto object-contain" />
+              <img src="/images/Logo/Mastercard-Logo.wine.png" alt="Mastercard" className="h-6 w-auto object-contain" />
+              <img src="/images/Logo/5515f6a04a78f503b468579be923b6.webp" alt="American Express" className="h-6 w-auto object-contain" />
             </div>
           </div>
         </div>
