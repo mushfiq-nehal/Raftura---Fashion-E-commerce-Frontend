@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Leaf, Heart, Users, Award } from 'lucide-react';
 
 const values = [
@@ -27,12 +28,18 @@ export default function About() {
   return (
     <div>
       {/* Header */}
-      <div style={{ backgroundColor: '#D8CAB8' }} className="pt-32 pb-16 px-5 lg:px-8 text-center">
-        <p className="font-label text-[#8B9D83] mb-4">OUR STORY</p>
-        <h1 className="font-display uppercase text-5xl md:text-6xl lg:text-7xl mb-4">ABOUT RAFTURA</h1>
-        <p className="font-body text-[#A09890] max-w-lg mx-auto">
-          Where fashion meets personality. We believe everyone deserves clothing that tells their unique story.
-        </p>
+      <div style={{ backgroundColor: '#D8CAB8' }} className="py-5 px-5 lg:px-8">
+        <div className="content-max-width flex items-center justify-between">
+          <div>
+            <p className="font-label text-[0.6rem] text-[#8B9D83] tracking-widest uppercase mb-0.5">Our Story</p>
+            <h1 className="font-heading text-xl md:text-2xl uppercase tracking-widest">About Raftura</h1>
+          </div>
+          <p className="font-label text-xs text-[#A09890]">
+            <Link to="/" className="hover:text-[#8B9D83]">Home</Link>
+            {' / '}
+            <span className="text-[#8B9D83]">About</span>
+          </p>
+        </div>
       </div>
 
       {/* Hero Image */}

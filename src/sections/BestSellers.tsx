@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Heart } from 'lucide-react';
 import { products } from '@/data/products';
+import ProductCard from '@/components/ProductCard';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -37,53 +37,20 @@ export default function BestSellers() {
   return (
     <section ref={sectionRef} className="best-sellers-section bg-white section-padding">
       <div className="content-max-width">
-        <div className="flex items-end justify-between mb-14">
-          <div>
-            <p className="font-label text-[#8B9D83] mb-4">MOST LOVED</p>
-            <h2 className="font-heading text-4xl md:text-5xl uppercase">BEST SELLERS</h2>
-          </div>
-          <Link to="/shop?bestseller=true" className="font-nav text-[#8B9D83] hover:underline hidden sm:block">
-            View All
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="font-heading text-2xl md:text-3xl">Best Sellers</h2>
+          <Link
+            to="/shop?bestseller=true"
+            className="text-[0.7rem] font-medium tracking-widest uppercase text-[#1A1A1A] hover:text-[#8B9D83] transition-colors flex items-center gap-1"
+          >
+            View More →
           </Link>
         </div>
+        <hr className="border-[#1A1A1A]/20 mb-10" />
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {bestProducts.map((product) => (
-            <Link
-              key={product.id}
-              to={`/product/${product.id}`}
-              className="animate-item group"
-            >
-              <div className="relative aspect-[3/4] overflow-hidden rounded bg-gray-100 mb-4">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-400 group-hover:scale-105"
-                  loading="lazy"
-                />
-                {product.badge && (
-                  <span className="absolute top-3 left-3 px-3 py-1 bg-[#8B9D83] text-white font-label text-[0.6rem] rounded-full">
-                    {product.badge}
-                  </span>
-                )}
-                <button
-                  className="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <Heart size={14} strokeWidth={1.5} />
-                </button>
-              </div>
-              <p className="font-label text-[#A09890] mb-1">{product.brand}</p>
-              <p className="font-body text-sm font-medium truncate mb-1">{product.name}</p>
-              <div className="flex items-center gap-2">
-                <span className="font-price">Rs. {product.price.toLocaleString()}</span>
-                {product.originalPrice > product.price && (
-                  <span className="font-price text-[#A09890] line-through text-xs">
-                    Rs. {product.originalPrice.toLocaleString()}
-                  </span>
-                )}
-              </div>
-            </Link>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>

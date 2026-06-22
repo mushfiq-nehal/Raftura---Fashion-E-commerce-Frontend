@@ -62,7 +62,7 @@ export default function ProductDetail() {
     {
       id: 'shipping',
       title: 'Shipping & Returns',
-      content: `Free shipping on orders over Rs. 5,000. Standard delivery: 3-5 business days. Express delivery: 1-2 business days. Easy 30-day returns on unworn items with original tags. Customized items are final sale unless defective.`,
+      content: `Free shipping on orders over BDT 5,000. Standard delivery: 3-5 business days. Express delivery: 1-2 business days. Easy 30-day returns on unworn items with original tags. Customized items are final sale unless defective.`,
     },
     {
       id: 'reviews',
@@ -136,10 +136,10 @@ export default function ProductDetail() {
 
             {/* Price */}
             <div className="flex items-center gap-3 mb-8">
-              <span className="font-heading text-2xl">Rs. {product.price.toLocaleString()}</span>
+              <span className="font-heading text-2xl">BDT {product.price.toLocaleString()}</span>
               {product.originalPrice > product.price && (
                 <span className="font-body text-[#A09890] line-through">
-                  Rs. {product.originalPrice.toLocaleString()}
+                  BDT {product.originalPrice.toLocaleString()}
                 </span>
               )}
             </div>
@@ -271,7 +271,7 @@ export default function ProductDetail() {
                 </div>
                 <p className="font-label text-[#A09890] mb-1">{p.brand}</p>
                 <p className="font-body text-sm font-medium truncate">{p.name}</p>
-                <p className="font-price mt-1">Rs. {p.price.toLocaleString()}</p>
+                <p className="font-price mt-1">BDT {p.price.toLocaleString()}</p>
               </Link>
             ))}
           </div>

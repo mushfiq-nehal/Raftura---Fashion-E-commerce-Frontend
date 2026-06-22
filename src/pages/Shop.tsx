@@ -1,7 +1,8 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Heart, SlidersHorizontal, Grid3X3, LayoutList } from 'lucide-react';
+import { SlidersHorizontal, Grid3X3, LayoutList } from 'lucide-react';
 import { products } from '@/data/products';
+import ProductCard from '@/components/ProductCard';
 import gsap from 'gsap';
 
 export default function Shop() {
@@ -82,13 +83,15 @@ export default function Shop() {
   return (
     <div>
       {/* Page Header */}
-      <div style={{ backgroundColor: '#D8CAB8' }} className="pt-32 pb-16 px-5 lg:px-8 text-center">
-        <h1 className="font-display uppercase text-5xl md:text-6xl lg:text-7xl mb-4">SHOP</h1>
-        <p className="font-label text-[#A09890]">
-          <Link to="/" className="hover:text-[#8B9D83]">HOME</Link>
-          {' / '}
-          <span className="text-[#8B9D83]">SHOP</span>
-        </p>
+      <div style={{ backgroundColor: '#D8CAB8' }} className="py-5 px-5 lg:px-8">
+        <div className="content-max-width flex items-center justify-between">
+          <h1 className="font-heading text-xl md:text-2xl uppercase tracking-widest">Shop</h1>
+          <p className="font-label text-xs text-[#A09890]">
+            <Link to="/" className="hover:text-[#8B9D83]">Home</Link>
+            {' / '}
+            <span className="text-[#8B9D83]">Shop</span>
+          </p>
+        </div>
       </div>
 
       {/* Filter Bar */}
@@ -175,44 +178,7 @@ export default function Shop() {
 }
 
 function GridProductCard({ product }: { product: typeof products[0] }) {
-  return (
-    <Link to={`/product/${product.id}`} className="product-card group">
-      <div className="relative aspect-[3/4] overflow-hidden rounded bg-gray-100 mb-4">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="absolute inset-0 w-full h-full object-cover transition-all duration-400 group-hover:scale-105"
-          loading="lazy"
-        />
-        {product.badge && (
-          <span className="absolute top-3 left-3 px-3 py-1 bg-[#8B9D83] text-white font-label text-[0.6rem] rounded-full">
-            {product.badge}
-          </span>
-        )}
-        {product.isNew && (
-          <span className="absolute top-3 left-3 px-3 py-1 bg-black text-white font-label text-[0.6rem] rounded-full">
-            NEW
-          </span>
-        )}
-        <button
-          className="absolute top-3 right-3 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white"
-          onClick={(e) => e.preventDefault()}
-        >
-          <Heart size={14} strokeWidth={1.5} />
-        </button>
-      </div>
-      <p className="font-label text-[#A09890] mb-1">{product.brand}</p>
-      <p className="font-body text-sm font-medium truncate mb-1">{product.name}</p>
-      <div className="flex items-center gap-2">
-        <span className="font-price">Rs. {product.price.toLocaleString()}</span>
-        {product.originalPrice > product.price && (
-          <span className="font-price text-[#A09890] line-through text-xs">
-            Rs. {product.originalPrice.toLocaleString()}
-          </span>
-        )}
-      </div>
-    </Link>
-  );
+  return <ProductCard product={product} className="product-card" />;
 }
 
 function ListProductCard({ product }: { product: typeof products[0] }) {
@@ -231,10 +197,10 @@ function ListProductCard({ product }: { product: typeof products[0] }) {
         <p className="font-body font-medium mb-2">{product.name}</p>
         <p className="font-body text-xs text-[#A09890] mb-3 line-clamp-2">{product.description}</p>
         <div className="flex items-center gap-2">
-          <span className="font-price">Rs. {product.price.toLocaleString()}</span>
+          <span className="font-price">BDT {product.price.toLocaleString()}</span>
           {product.originalPrice > product.price && (
             <span className="font-price text-[#A09890] line-through text-xs">
-              Rs. {product.originalPrice.toLocaleString()}
+              BDT {product.originalPrice.toLocaleString()}
             </span>
           )}
         </div>

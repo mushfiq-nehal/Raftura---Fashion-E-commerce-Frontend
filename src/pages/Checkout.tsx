@@ -184,14 +184,14 @@ export default function Checkout() {
                   <input type="radio" name="shipping" defaultChecked className="accent-[#8B9D83]" />
                   <span className="font-body text-sm">Standard Shipping (3-5 days)</span>
                 </div>
-                <span className="font-price">{shipping === 0 ? 'FREE' : `Rs. ${shipping}`}</span>
+                <span className="font-price">{shipping === 0 ? 'FREE' : `BDT ${shipping}`}</span>
               </label>
               <label className="flex items-center justify-between p-4 border border-gray-200 cursor-pointer hover:border-[#8B9D83]/50 rounded transition-colors">
                 <div className="flex items-center gap-3">
                   <input type="radio" name="shipping" className="accent-[#8B9D83]" />
                   <span className="font-body text-sm">Express Shipping (1-2 days)</span>
                 </div>
-                <span className="font-price">Rs. 350</span>
+                <span className="font-price">BDT 350</span>
               </label>
             </div>
           </div>
@@ -292,7 +292,7 @@ export default function Checkout() {
                     </p>
                   </div>
                   <p className="font-price text-sm">
-                    Rs. {(item.product.price * item.quantity).toLocaleString()}
+                    BDT {(item.product.price * item.quantity).toLocaleString()}
                   </p>
                 </div>
               ))}
@@ -301,15 +301,15 @@ export default function Checkout() {
             <div className="border-t border-gray-200 pt-4 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="font-body text-sm text-[#A09890]">Subtotal</span>
-                <span className="font-price">Rs. {totalPrice.toLocaleString()}</span>
+                <span className="font-price">BDT {totalPrice.toLocaleString()}</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-body text-sm text-[#A09890]">Shipping</span>
-                <span className="font-price">{shipping === 0 ? 'FREE' : `Rs. ${shipping}`}</span>
+                <span className="font-price">{shipping === 0 ? 'FREE' : `BDT ${shipping}`}</span>
               </div>
               <div className="border-t border-gray-200 pt-3 flex items-center justify-between">
                 <span className="font-body font-medium">Total</span>
-                <span className="font-heading text-xl">Rs. {finalTotal.toLocaleString()}</span>
+                <span className="font-heading text-xl">BDT {finalTotal.toLocaleString()}</span>
               </div>
             </div>
 

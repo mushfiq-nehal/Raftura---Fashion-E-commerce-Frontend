@@ -115,7 +115,7 @@ export default function Customize() {
               </div>
               <p className="font-label text-[#A09890] mb-1">{product.brand}</p>
               <p className="font-body text-sm font-medium truncate">{product.name}</p>
-              <p className="font-price mt-1">Rs. {product.price.toLocaleString()}</p>
+              <p className="font-price mt-1">BDT {product.price.toLocaleString()}</p>
             </Link>
           ))}
         </div>

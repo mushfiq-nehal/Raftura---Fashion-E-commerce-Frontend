@@ -95,7 +95,7 @@ export default function Cart() {
                         </button>
                       </div>
                       <p className="font-price">
-                        Rs. {(item.product.price * item.quantity).toLocaleString()}
+                        BDT {(item.product.price * item.quantity).toLocaleString()}
                       </p>
                     </div>
                   </div>
@@ -134,23 +134,23 @@ export default function Cart() {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-between">
                   <span className="font-body text-sm text-[#A09890]">Subtotal</span>
-                  <span className="font-price">Rs. {totalPrice.toLocaleString()}</span>
+                  <span className="font-price">BDT {totalPrice.toLocaleString()}</span>
                 </div>
                 {discount > 0 && (
                   <div className="flex items-center justify-between">
                     <span className="font-body text-sm text-[#8B9D83]">Discount</span>
-                    <span className="font-price text-[#8B9D83]">- Rs. {discount.toLocaleString()}</span>
+                    <span className="font-price text-[#8B9D83]">- BDT {discount.toLocaleString()}</span>
                   </div>
                 )}
                 <div className="flex items-center justify-between">
                   <span className="font-body text-sm text-[#A09890]">Shipping</span>
                   <span className="font-price">
-                    {shipping === 0 ? 'FREE' : `Rs. ${shipping}`}
+                    {shipping === 0 ? 'FREE' : `BDT ${shipping}`}
                   </span>
                 </div>
                 <div className="border-t border-gray-200 pt-3 flex items-center justify-between">
                   <span className="font-body font-medium">Total</span>
-                  <span className="font-heading text-xl">Rs. {finalTotal.toLocaleString()}</span>
+                  <span className="font-heading text-xl">BDT {finalTotal.toLocaleString()}</span>
                 </div>
               </div>
 

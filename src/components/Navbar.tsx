@@ -281,7 +281,7 @@ function CartDrawer() {
                           +
                         </button>
                       </div>
-                      <p className="font-price">Rs. {(item.product.price * item.quantity).toLocaleString()}</p>
+                      <p className="font-price">BDT {(item.product.price * item.quantity).toLocaleString()}</p>
                     </div>
                   </div>
                 </div>
@@ -291,7 +291,7 @@ function CartDrawer() {
             <div className="p-6 border-t border-gray-100 bg-gray-50">
               <div className="flex items-center justify-between mb-4">
                 <span className="font-body text-sm">Subtotal</span>
-                <span className="font-price">Rs. {totalPrice.toLocaleString()}</span>
+                <span className="font-price">BDT {totalPrice.toLocaleString()}</span>
               </div>
               <button
                 onClick={() => { closeCart(); navigate('/checkout'); }}
