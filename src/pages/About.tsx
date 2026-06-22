@@ -42,16 +42,6 @@ export default function About() {
         </div>
       </div>
 
-      {/* Hero Image */}
-      <div className="content-max-width px-5 lg:px-8 mb-20">
-        <div className="aspect-[21/9] overflow-hidden rounded">
-          <img
-            src="/images/sustainability.jpg"
-            alt="RAFTURA brand"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
 
       {/* Mission */}
       <div className="section-padding content-max-width">

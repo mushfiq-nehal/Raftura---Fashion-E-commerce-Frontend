@@ -52,7 +52,7 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
   };
 
   return (
-    <div className={`group animate-item ${className}`}>
+    <div className={`group animate-item flex flex-col ${className}`}>
       <Link to={`/product/${product.id}`} className="block">
         <div className="relative overflow-hidden bg-gray-100 mb-3" style={{ aspectRatio: '3/4' }}>
           <img
@@ -74,12 +74,13 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
         </div>
       </Link>
 
-      <div className="pt-1">
-        {/* Name + Stars — wrap on very narrow cards */}
+      {/* Info — flex-col + flex-1 so button always sticks to bottom */}
+      <div className="pt-1 flex flex-col flex-1">
+        {/* Name + Stars */}
         <div className="flex items-start justify-between gap-1 mb-1">
           <Link
             to={`/product/${product.id}`}
-            className="font-semibold text-xs sm:text-sm text-[#1A1A1A] leading-snug hover:text-[#8B9D83] transition-colors line-clamp-2"
+            className="font-semibold text-xs sm:text-sm text-[#1A1A1A] leading-snug hover:text-[#8B9D83] transition-colors line-clamp-1"
           >
             {product.name}
           </Link>
@@ -88,30 +89,31 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
           </div>
         </div>
 
-        {/* Description — hidden on very small screens to save space */}
-        <p className="hidden sm:block text-xs text-[#5C4F43] leading-relaxed mb-2 line-clamp-1">
-          {product.description}
+        {/* Short feature tag — always 1 line, consistent height */}
+        <p className="text-[0.65rem] sm:text-xs text-[#5C4F43] mb-3 truncate">
+          {product.features[0]}
         </p>
 
-        {/* Price row */}
-        <div className="flex items-center gap-1.5 mb-2 mt-1">
-          <span className="text-xs sm:text-sm font-semibold text-[#1A1A1A]">
-            BDT {product.price.toLocaleString()}
-          </span>
-          {product.originalPrice > product.price && (
-            <span className="text-[0.65rem] sm:text-xs text-[#7A6B5D] line-through">
-              BDT {product.originalPrice.toLocaleString()}
+        {/* Price + button on same row */}
+        <div className="mt-auto flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1.5 min-w-0">
+            <span className="text-xs sm:text-sm font-semibold text-[#1A1A1A] whitespace-nowrap">
+              BDT {product.price.toLocaleString()}
             </span>
-          )}
-        </div>
+            {product.originalPrice > product.price && (
+              <span className="text-[0.6rem] text-[#7A6B5D] line-through whitespace-nowrap hidden sm:inline">
+                BDT {product.originalPrice.toLocaleString()}
+              </span>
+            )}
+          </div>
 
-        {/* Add to Cart — full width */}
-        <button
-          onClick={handleAddToCart}
-          className="w-full py-1.5 bg-[#8B7355] text-white text-[0.6rem] font-medium tracking-widest uppercase hover:bg-[#7A6347] transition-colors"
-        >
-          Add to Cart →
-        </button>
+          <button
+            onClick={handleAddToCart}
+            className="flex-shrink-0 px-2.5 py-1.5 bg-[#8B7355] text-white text-[0.55rem] font-medium tracking-widest uppercase hover:bg-[#7A6347] transition-colors whitespace-nowrap"
+          >
+            Add to Cart →
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -87,7 +87,7 @@ export default function Shop() {
         <div className="content-max-width flex items-center justify-between">
           <h1 className="font-heading text-xl md:text-2xl uppercase tracking-widest">Shop</h1>
           <p className="font-label text-xs text-[#A09890]">
-            <Link to="/" className="hover:text-[#8B9D83]">Home</Link>
+            <Link to="/" className="hover:text-[#C4956A]">Home</Link>
             {' / '}
             <span className="text-[#8B9D83]">Shop</span>
           </p>
@@ -104,7 +104,7 @@ export default function Shop() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`font-nav whitespace-nowrap relative py-1 ${
-                  activeCategory === cat ? 'text-[#8B9D83]' : 'text-black/60 hover:text-black'
+                  activeCategory === cat ? 'text-[#8B9D83]' : 'text-black/60 hover:text-[#C4956A]'
                 }`}
               >
                 {cat}
@@ -183,7 +183,7 @@ function GridProductCard({ product }: { product: typeof products[0] }) {
 
 function ListProductCard({ product }: { product: typeof products[0] }) {
   return (
-    <Link to={`/product/${product.id}`} className="product-card group flex gap-6 p-4 border border-gray-100 rounded hover:border-[#8B9D83]/30 transition-colors">
+    <Link to={`/product/${product.id}`} className="product-card group flex gap-6 p-4 border border-gray-100 rounded hover:border-[#C4956A]/30 transition-colors">
       <div className="relative w-32 h-40 flex-shrink-0 overflow-hidden rounded bg-gray-100">
         <img
           src={product.image}

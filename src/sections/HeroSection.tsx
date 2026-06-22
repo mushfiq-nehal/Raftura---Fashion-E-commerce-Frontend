@@ -46,7 +46,7 @@ export default function HeroSection() {
             </p>
             <Link
               to="/customize"
-              className="group inline-flex items-center gap-3 px-8 py-3.5 border-2 transition-all duration-300 hover:bg-[#2D2D2D] hover:text-white hover:border-[#2D2D2D]"
+              className="group inline-flex items-center gap-3 px-8 py-3.5 border-2 transition-all duration-300 hover:bg-[#C4956A] hover:text-white hover:border-[#C4956A]"
               style={{
                 borderColor: '#2D2D2D',
                 color: '#2D2D2D',
@@ -88,10 +88,8 @@ export default function HeroSection() {
                   FOR MEN
                 </h3>
                 <span
-                  className="inline-flex items-center gap-2 px-4 py-1.5 text-white transition-all duration-300 group-hover:bg-white group-hover:text-[#2D2D2D]"
+                  className="inline-flex items-center gap-2 px-4 py-1.5 text-white transition-all duration-300 bg-white/15 backdrop-blur-sm group-hover:bg-[#C4956A] group-hover:text-white"
                   style={{
-                    backgroundColor: 'rgba(255,255,255,0.15)',
-                    backdropFilter: 'blur(4px)',
                     fontFamily: 'Inter, sans-serif',
                     fontWeight: 500,
                     fontSize: '0.65rem',
@@ -124,10 +122,8 @@ export default function HeroSection() {
                   FOR WOMEN
                 </h3>
                 <span
-                  className="inline-flex items-center gap-2 px-4 py-1.5 text-white transition-all duration-300 group-hover:bg-white group-hover:text-[#2D2D2D]"
+                  className="inline-flex items-center gap-2 px-4 py-1.5 text-white transition-all duration-300 bg-white/15 backdrop-blur-sm group-hover:bg-[#C4956A] group-hover:text-white"
                   style={{
-                    backgroundColor: 'rgba(255,255,255,0.15)',
-                    backdropFilter: 'blur(4px)',
                     fontFamily: 'Inter, sans-serif',
                     fontWeight: 500,
                     fontSize: '0.65rem',
