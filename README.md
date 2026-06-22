@@ -1,4 +1,4 @@
-# my-app
+# Raftura - Fashion E-commerce Frontend
 
 Practical assessment for the Frontend Developer Internship at CodesRaft.
 
